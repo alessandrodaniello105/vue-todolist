@@ -32,12 +32,14 @@
       <!-- 13. Aggiungo la possibilità di invocare questa funzione anche al rilascio del tasto enter all'interno del campo input -->
       <input v-model.trim="newTask.text"
       type="text"
-      placeholder="Inserisci un obbliggo a cui sicuramente non verrai meno"
+      placeholder="Inserisci un obbliggo a cui sicuramente non verrai meno..."
       @keyup.enter="addTask(newTask)"
       >
 
       <!-- 12. Invoco la funzione al click del bottone 'Aggiungi' -->
       <button @click="addTask(newTask)">Aggiungi</button>
+
+      <p v-if="isMin" class="error">Inserisci un task di almeno 5 lettere</p>
 
     </div>
 
@@ -55,7 +57,9 @@
         <span>{{task.text}}</span>
 
         <!-- 7. Aggiungo un icona di 'rimozione task' ad ogni item -->
-        <i @click="getDelete(index)" class="fa-solid fa-trash-can"></i>
+        <div @click.stop="getDelete(index)" class="remove-btn">
+          <i class="fa-solid fa-trash-can"></i>
+        </div>
       </li>
 
       </ul>

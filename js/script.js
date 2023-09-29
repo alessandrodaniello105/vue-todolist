@@ -8,20 +8,28 @@ createApp({
       tasks: [
         
         {
-          text: 'task 1 vue',
+          text: 'Studiare Vue',
           isDone: false
         },
 
         {
-          text: 'task 2 vue',
+          text: 'Fare pausa',
           isDone: true
         },
 
         {
-          text: 'task 3 vue',
+          text: 'Guadagnare con Vue',
+          isDone: false
+        },
+
+        {
+          text: 'Essere apprezzato dal team',
           isDone: false
         }
+
       ],
+
+      isMin: false,
 
       isEmpty: false,
     
@@ -45,7 +53,7 @@ createApp({
         this.tasks.splice(index, 1)
 
         if (this.tasks.length < 1) {
-          this.tasks = [];
+          // this.tasks = [];
           this.isEmpty = true
           
         }
@@ -57,11 +65,21 @@ createApp({
 
     // 11. Creo una funzione che pusha (con unshift per averlo all'indice 0) la stringa in input nell'array delle tasks
     addTask(element){
-      if (this.tasks.includes(element)) {
-        alert('Questa task è stata già inserita')
+      
+      // Bonus 1. Creo una funzione di verifica per la lunghezza minima dell'input task
+      if (this.newTask.text.length < 5) {
+
+        this.isMin = true;
+        setTimeout(()=> {
+        this.isMin = false;
+        },2000)
+        
       } else {
-        this.tasks.unshift(element)
+
+        this.tasks.includes(element) ? alert('Questo task è stata già inserita') : this.tasks.unshift(element)
+
       }
+      
     }
 
 
@@ -69,8 +87,8 @@ createApp({
 
 
 
-  mounted(){
-    console.log(this.tasks[0].text, this.tasks[0].isDone)
-  }
+  // mounted(){
+  //   console.log(this.tasks[0].text, this.tasks[0].isDone)
+  // }
 
 }).mount('#app')

@@ -14,3 +14,7 @@ Vue To Do List
 1. Creo una funzione che pusha (con unshift per averlo all'indice 0) la stringa in input nell'array delle tasks
 1. Invoco la funzione al click del bottone 'Aggiungi'
 1. Aggiungo la possibilità di invocare questa funzione anche al rilascio del tasto enter all'interno del campo input
+
+Bonus 
+1. Creo una funzione di verifica per la lunghezza minima dell'input task
+1. Aggiungo una verifica per rimuovere la task solo se isDone = true
