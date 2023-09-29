@@ -16,7 +16,7 @@
 
 .task-container {
   background-color: rgb(193, 193, 193);
-  min-height: 300px;
+  /* min-height: 300px; */
   margin-top: 40px;
   border-radius: 10px;
 }

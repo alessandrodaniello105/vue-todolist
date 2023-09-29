@@ -25,18 +25,17 @@ createApp({
 
       isEmpty: false,
     
-      doneTasks: []
+      // 9. Creo un oggetto con testo vuoto e done false che sarà il mio "template" task che pusherò
+      newTask: {
+        text: '',
+        isDone: false
+      }
     
     }
     
   },
 
   methods:{
-    // getDone(index){
-    //   this.tasks[index].isDone = !this.tasks[index].isDone
-    //   console.log(this.tasks[index], this.tasks[index].isDone)
-    // },
-
 
     // 8. Quando clicco sull'icona, la task viene rimossa (con .slice(index, 1))
     getDelete(index){
@@ -54,8 +53,21 @@ createApp({
         alert('ti piacerebbe')
       }
       
+    },
+
+    // 11. Creo una funzione che pusha (con unshift per averlo all'indice 0) la stringa in input nell'array delle tasks
+    addTask(element){
+      if (this.tasks.includes(element)) {
+        alert('Questa task è stata già inserita')
+      } else {
+        this.tasks.unshift(element)
+      }
     }
+
+
   },
+
+
 
   mounted(){
     console.log(this.tasks[0].text, this.tasks[0].isDone)

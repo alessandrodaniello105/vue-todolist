@@ -27,8 +27,14 @@
     </div>
 
     <div class="add-task">
-      <input type="text" placeholder="Inserisci un obbliggo a cui sicuramente non verrai meno">
-      <button>Aggiungi</button>
+
+      <!-- 10. Bindo l'input text, col v-model, al "template task" (e trimmo la stringa come metodo di v-model) -->
+      
+      <input v-model="newTask.text" type="text" placeholder="Inserisci un obbliggo a cui sicuramente non verrai meno">
+
+      <!-- 12. Invoco la funzione al click del bottone 'Aggiungi' -->
+      <button @click="addTask(newTask)">Aggiungi</button>
+
     </div>
 
     <div class="task-container">
