@@ -40,13 +40,13 @@
         <li 
         v-for="(task, index) in tasks"
         :class="{'stroked': task.isDone}"
-        @click="getDone(index)" 
+        @click.stop="task.isDone = !task.isDone" 
         >
         <span>{{task.text}}</span>
 
         <!-- 7. Aggiungo un icona di 'rimozione task' ad ogni item -->
         <i @click="getDelete(index)" class="fa-solid fa-trash-can"></i>
-        </li>
+      </li>
 
       </ul>
 

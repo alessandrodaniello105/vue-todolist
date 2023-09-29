@@ -23,27 +23,33 @@ createApp({
         }
       ],
 
-      isEmpty: false
+      isEmpty: false,
+    
+      doneTasks: []
+    
     }
     
   },
 
   methods:{
-    getDone(index){
-      this.tasks[index].isDone = !this.tasks[index].isDone
-    },
+    // getDone(index){
+    //   this.tasks[index].isDone = !this.tasks[index].isDone
+    //   console.log(this.tasks[index], this.tasks[index].isDone)
+    // },
 
 
     // 8. Quando clicco sull'icona, la task viene rimossa (con .slice(index, 1))
     getDelete(index){
       
       if (this.tasks[index].isDone) {
+
         this.tasks.splice(index, 1)
-      if (this.tasks.length < 1) {
-        this.tasks = [];
-        this.isEmpty = true
-        
-      }
+
+        if (this.tasks.length < 1) {
+          this.tasks = [];
+          this.isEmpty = true
+          
+        }
       } else {
         alert('ti piacerebbe')
       }
