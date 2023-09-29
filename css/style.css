@@ -10,6 +10,10 @@
   text-align: center;
 }
 
+.img-box {
+  margin: 20px 0;
+}
+
 .task-container {
   background-color: rgb(193, 193, 193);
   min-height: 300px;
@@ -27,6 +31,10 @@
   border-bottom: 1px solid lightgray;
   padding: 10px 5px;
   cursor: pointer;
+}
+
+.task-container ul li i {
+  float: right;
 }
 
 .task-container ul li:hover {
