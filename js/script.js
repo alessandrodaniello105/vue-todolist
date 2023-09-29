@@ -37,8 +37,10 @@ createApp({
       newTask: {
         text: '',
         isDone: false
-      }
-    
+      },
+
+      errorMessage: ''
+
     }
     
   },
@@ -48,6 +50,7 @@ createApp({
     // 8. Quando clicco sull'icona, la task viene rimossa (con .slice(index, 1))
     getDelete(index){
       
+      // Bonus 2. Aggiungo una verifica per rimuovere la task solo se isDone = true
       if (this.tasks[index].isDone) {
 
         this.tasks.splice(index, 1)
@@ -67,12 +70,13 @@ createApp({
     addTask(element){
       
       // Bonus 1. Creo una funzione di verifica per la lunghezza minima dell'input task
-      if (this.newTask.text.length < 5) {
-
-        this.isMin = true;
-        setTimeout(()=> {
-        this.isMin = false;
-        },2000)
+      
+      if ((this.newTask.text.length == 0)) {
+        this.errorMessage = 'Eddai almeno qualche lettera inseriscila'
+        this.errorClock();
+      } else if (this.newTask.text.length < 5) {
+        this.errorMessage = 'Inserisci un task di almeno 5 lettere, per piacere'
+        this.errorClock();
         
       } else {
 
@@ -80,6 +84,13 @@ createApp({
 
       }
       
+    },
+
+    errorClock(){
+      this.isMin = true;
+      setTimeout(()=> {
+      this.isMin = false;
+      },2000)
     }
 
 

@@ -39,7 +39,7 @@
       <!-- 12. Invoco la funzione al click del bottone 'Aggiungi' -->
       <button @click="addTask(newTask)">Aggiungi</button>
 
-      <p v-if="isMin" class="error">Inserisci un task di almeno 5 lettere</p>
+      <p v-if="isMin" class="error">{{errorMessage}}</p>
 
     </div>
 
@@ -64,7 +64,7 @@
 
       </ul>
 
-      <div v-else>alfonso</div>
+      <div v-else><h3 id="no-task">Non hai nessun task da completare. Complimenti!</h3></div>
 
     </div>
 

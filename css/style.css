@@ -97,3 +97,7 @@ input:focus {
   color: rgb(242, 242, 242);
   margin: 8px 0;
 }
+
+#no-task {
+  line-height: 50px;
+}
