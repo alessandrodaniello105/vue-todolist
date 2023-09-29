@@ -30,7 +30,7 @@
 
       <!-- 10. Bindo l'input text, col v-model, al "template task" (e trimmo la stringa come metodo di v-model) -->
       <!-- 13. Aggiungo la possibilità di invocare questa funzione anche al rilascio del tasto enter all'interno del campo input -->
-      <input v-model="newTask.text"
+      <input v-model.trim="newTask.text"
       type="text"
       placeholder="Inserisci un obbliggo a cui sicuramente non verrai meno"
       @keyup.enter="addTask(newTask)"
