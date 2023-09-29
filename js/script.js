@@ -36,13 +36,18 @@ createApp({
 
     // 8. Quando clicco sull'icona, la task viene rimossa (con .slice(index, 1))
     getDelete(index){
-      console.log(this.tasks[index])
-      this.tasks.splice(index, 1)
+      
+      if (this.tasks[index].isDone) {
+        this.tasks.splice(index, 1)
       if (this.tasks.length < 1) {
         this.tasks = [];
         this.isEmpty = true
         
       }
+      } else {
+        alert('ti piacerebbe')
+      }
+      
     }
   },
 
