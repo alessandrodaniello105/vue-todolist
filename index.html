@@ -33,7 +33,7 @@
 
     <div class="task-container">
       
-      <ul>
+      <ul v-if="!isEmpty">
 
         <!-- 4. Stampo le tasks all'interno di una lista HTML (ciclando, della lista, sia l'elemento che l'index) -->
         <!-- 6. Bindo questa classe dinamicamente all'elemento todo, e al click dell'elemento invoco la funzione che mi toggla il done = !done -->
@@ -45,10 +45,12 @@
         <span>{{task.text}}</span>
 
         <!-- 7. Aggiungo un icona di 'rimozione task' ad ogni item -->
-        <i class="fa-solid fa-trash-can"></i>
+        <i @click="getDelete(index)" class="fa-solid fa-trash-can"></i>
         </li>
 
       </ul>
+
+      <div v-else>alfonso</div>
 
     </div>
 
