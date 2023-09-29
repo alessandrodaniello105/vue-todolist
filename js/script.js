@@ -14,14 +14,23 @@ createApp({
 
         {
           text: 'task 2 vue',
-          isDone: false
+          isDone: true
         },
 
         {
           text: 'task 3 vue',
           isDone: false
         }
-      ]
+      ],
+
+      counter: 0
+    }
+    
+  },
+
+  methods:{
+    getDone(index){
+      this.tasks[index].isDone = !this.tasks[index].isDone
     }
   },
 

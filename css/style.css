@@ -25,10 +25,17 @@
 
 .task-container ul li {
   border-bottom: 1px solid lightgray;
-  
-  padding: 10px 0;
+  padding: 10px 5px;
+  cursor: pointer;
 }
 
 .task-container ul li:hover {
   background-color: white;
+}
+
+/*
+5. Creo la classe css stroked
+*/
+.stroked {
+  text-decoration:line-through
 }

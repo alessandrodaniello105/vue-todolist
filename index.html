@@ -34,7 +34,13 @@
       <ul>
 
         <!-- 4. Stampo le tasks all'interno di una lista HTML (ciclando, della lista, sia l'elemento che l'index) -->
-        <li v-for="(task, index) in tasks">{{task.text}}</li>
+        <!-- 6. Bindo questa classe dinamicamente all'elemento todo, e al click dell'elemento invoco la funzione che mi toggla il done = !done -->
+        <li 
+        v-for="(task, index) in tasks"
+        :class="{'stroked': task.isDone}"
+        @click="getDone(index)" 
+        >
+        {{task.text}}</li>
 
       </ul>
 
