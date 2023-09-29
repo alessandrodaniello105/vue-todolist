@@ -33,11 +33,11 @@
       <input v-model.trim="newTask.text"
       type="text"
       placeholder="Inserisci un obbliggo a cui sicuramente non verrai meno..."
-      @keyup.enter="addTask(newTask)"
+      @keyup.enter="addTask"
       >
 
       <!-- 12. Invoco la funzione al click del bottone 'Aggiungi' -->
-      <button @click="addTask(newTask)">Aggiungi</button>
+      <button @click="addTask">Aggiungi</button>
 
       <p v-if="isMin" class="error">{{errorMessage}}</p>
 

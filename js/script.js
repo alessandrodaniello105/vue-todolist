@@ -61,28 +61,39 @@ createApp({
           
         }
       } else {
-        alert('ti piacerebbe')
+        alert('Ti piacerebbe')
       }
       
     },
 
     // 11. Creo una funzione che pusha (con unshift per averlo all'indice 0) la stringa in input nell'array delle tasks
-    addTask(element){
+    addTask(){
       
-      // Bonus 1. Creo una funzione di verifica per la lunghezza minima dell'input task
       
+      // Bonus 1. Creo una funzione di verifica per la lunghezza minima dell'input task 
       if ((this.newTask.text.length == 0)) {
-        this.errorMessage = 'Eddai almeno qualche lettera inseriscila'
+
+        this.errorMessage = 'Eddai almeno qualche lettera inseriscila';
         this.errorClock();
+
       } else if (this.newTask.text.length < 5) {
-        this.errorMessage = 'Inserisci un task di almeno 5 lettere, per piacere'
+
+        this.errorMessage = 'Inserisci un task di almeno 5 lettere, per piacere';
         this.errorClock();
+
+        
+      } else if (this.tasks.includes(this.newTask)) {
+        
+        alert('Questo task è stato già inserito')
         
       } else {
-
-        this.tasks.includes(element) ? alert('Questo task è stata già inserita') : this.tasks.unshift(element)
-
+        
+        console.log(this.newTask)
+        this.tasks.unshift({...this.newTask});
+        
       }
+      // this.newTask.text = '';
+      console.log(this.tasks)
       
     },
 
@@ -90,7 +101,7 @@ createApp({
       this.isMin = true;
       setTimeout(()=> {
       this.isMin = false;
-      },2000)
+      },2500)
     }
 
 
