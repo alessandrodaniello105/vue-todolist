@@ -88,12 +88,12 @@ createApp({
         
       } else {
         
-        console.log(this.newTask)
+        // console.log(this.newTask)
         this.tasks.unshift({...this.newTask});
         
       }
       // this.newTask.text = '';
-      console.log(this.tasks)
+      // console.log(this.tasks)
       
     },
 
