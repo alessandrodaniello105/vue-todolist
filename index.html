@@ -29,8 +29,12 @@
     <div class="add-task">
 
       <!-- 10. Bindo l'input text, col v-model, al "template task" (e trimmo la stringa come metodo di v-model) -->
-      
-      <input v-model="newTask.text" type="text" placeholder="Inserisci un obbliggo a cui sicuramente non verrai meno">
+      <!-- 13. Aggiungo la possibilità di invocare questa funzione anche al rilascio del tasto enter all'interno del campo input -->
+      <input v-model="newTask.text"
+      type="text"
+      placeholder="Inserisci un obbliggo a cui sicuramente non verrai meno"
+      @keyup.enter="addTask(newTask)"
+      >
 
       <!-- 12. Invoco la funzione al click del bottone 'Aggiungi' -->
       <button @click="addTask(newTask)">Aggiungi</button>
